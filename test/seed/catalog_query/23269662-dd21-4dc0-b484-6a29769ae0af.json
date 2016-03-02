@@ -1,0 +1,9 @@
+{
+  "id": "23269662-dd21-4dc0-b484-6a29769ae0af",
+  "type": "query",
+  "title": "Videos",
+  "parameters": {
+    "entityTypes": ["video"]
+  },
+  "url": "/v1/videos"
+}

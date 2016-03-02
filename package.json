@@ -1,0 +1,54 @@
+{
+  "name": "seneca-odd-catalog",
+  "version": "3.0.0",
+  "description": "",
+  "main": "odd-catalog.js",
+  "scripts": {
+    "test": "npm run lint && npm run tape",
+    "tape": "tape 'test/**/*_test.js' | tap-spec",
+    "lint": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oddnetworks/seneca-odd-catalog.git"
+  },
+  "keywords": [
+    "odd",
+    "video",
+    "catalog"
+  ],
+  "author": "Brian Corrigan, Dan Pallas",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/oddnetworks/seneca-odd-catalog/issues"
+  },
+  "engines": {
+    "node": "4.2.4"
+  },
+  "dependencies": {
+    "async": "^1.3.0",
+    "aws4": "^1.2.1",
+    "bluebird": "^2.9.25",
+    "elastic.js": "1.1.1",
+    "elasticsearch": "^10.0.1",
+    "elasticsearch-deletebyquery": "^1.6.0",
+    "glob": "^5.0.14",
+    "inflection": "^1.7.1",
+    "interpolate": "^0.1.0",
+    "lodash": "^4.2.1",
+    "odd-schemas": "git+https://github.com/oddnetworks/odd-schemas.git",
+    "parambulator": "^1.5.0",
+    "seneca": "^0.6.3",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "seneca-mem-store": "^0.3.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.0.0",
+    "xo": "^0.9.0"
+  },
+  "peerDependencies": {
+    "seneca": "*"
+  },
+  "homepage": "https://github.com/oddnetworks/seneca-odd-catalog"
+}

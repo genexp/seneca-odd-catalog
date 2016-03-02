@@ -1,0 +1,14 @@
+{
+  "id": "fbec8574-6eb0-4339-91db-7833d96ed8c8",
+  "type": "promotion",
+  "organization": "odd-networks",
+  "title": "World Poker Tour",
+  "description": "Lorem ipsum dolor sit amet.",
+  "images": {
+    "aspect16x9": "http://image.oddworks.io/eooyala/94MmYydjpIN78xubYk0YtNLG8yJ7sXhn/promo260476980.jpg",
+    "aspect4x3": "http://dummyimage.com/4:3x1440&text=Promo",
+    "aspect3x4": "http://dummyimage.com/3:4x1920&text=Promo",
+    "aspect1x1": "http://dummyimage.com/1:1x1920&text=Promo",
+    "aspect2x3": "http://image.oddworks.io/odd-networks/promotions/1/2x3.png"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "9294be21-d73f-4c76-a0e0-9f2b104f484e",
+  "type": "promotion",
+  "organization": "odd-networks",
+  "title": "Odd Networks",
+  "description": "Lorem ipsum dolor sit amet.",
+  "images": {
+    "aspect16x9": "http://dummyimage.com/16:9x1920&text=Promo",
+    "aspect4x3": "http://dummyimage.com/4:3x1440&text=Promo",
+    "aspect3x4": "http://dummyimage.com/3:4x1920&text=Promo",
+    "aspect1x1": "http://dummyimage.com/1:1x1920&text=Promo",
+    "aspect2x3": "http://image.oddworks.io/odd-networks/promotions/1/2x3.png"
+  }
+}

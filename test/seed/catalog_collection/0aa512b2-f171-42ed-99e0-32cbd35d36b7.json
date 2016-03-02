@@ -1,0 +1,25 @@
+{
+  "id": "0aa512b2-f171-42ed-99e0-32cbd35d36b7",
+  "type": "collection",
+  "organization": "odd-networks",
+  "title": "Video Collection",
+  "description": "Only the best of the best, these are must watch poker videos.",
+  "images": {
+    "aspect16x9": "http://image.oddworks.io/eooyala/Bpdjd4dTqO5GawBUIMS3IsP6eGVCOBl4/promo260035108.jpg"
+  },
+  "releaseDate": "2013-11-27T23:55:23.000Z",
+  "relationships": {
+    "entities": {
+      "links": {
+        "self": "/v1/collections/0aa512b2-f171-42ed-99e0-32cbd35d36b7/items"
+      },
+      "data": [{
+        "id": "a-video-with-feature-keys",
+        "type": "video"
+      }, {
+        "id": "ooyala-ARandomOddNetworksVideo",
+        "type": "video"
+      }]
+    }
+  }
+}

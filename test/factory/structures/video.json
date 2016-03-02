@@ -1,0 +1,17 @@
+{
+	"id": "c3e2e8e0-c533-11e5-9644-d7f8b5cd1cb9",
+	"type": "video",
+	"organization": "odd-networks",
+	"title": "A Random Odd Networks Video",
+	"description": "",
+	"images": {
+		"aspect16x9": "http://image.oddworks.io/eooyala/ZnOXI2djoPMRuTRSX9FQH0ulcwX6AILn/promo261773731.jpg",
+		"aspect4x3": "http://dummyimage.com/4:3x1440&text=Metallica+Rules",
+		"aspect3x4": "http://dummyimage.com/3:4x1920&text=Metallica+Rules",
+		"aspect1x1": "http://dummyimage.com/1:1x1920&text=Metallica+Rules",
+		"aspect2x3": "http://dummyimage.com/2:3x1920&text=Metallica+Rules"
+	},
+	"url": "http://example.com/video.m3u8",
+	"duration": 300,
+	"releaseDate": "2015-04-21T09:01:23.000Z"
+}

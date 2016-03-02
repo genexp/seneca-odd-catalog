@@ -1,0 +1,63 @@
+{
+  "id": "2a181af0-eea5-4a11-8c5a-3c2d146657d7",
+  "type": "view",
+  "title": "Home Page",
+  "updatedAt": "2015-06-19T15:12:43.000Z",
+  "version": 1,
+  "relationships": {
+    "featuredPromotion": {
+      "links": {
+        "self": "/v1/views/2a181af0-eea5-4a11-8c5a-3c2d146657d7/relationships/promotion"
+      },
+      "data": {
+        "id": "fbec8574-6eb0-4339-91db-7833d96ed8c8",
+        "type": "promotion"
+      },
+      "meta": {
+        "entityTypes": ["promotion"]
+      }
+    },
+    "featuredLiveStream": {
+      "links": {
+        "self": "/v1/views/2a181af0-eea5-4a11-8c5a-3c2d146657d7/relationships/liveStream"
+      },
+      "data": {
+        "id": "dd4280d7-b587-420c-8546-fd731d60a926",
+        "type": "liveStream"
+      },
+      "meta": {
+        "entityTypes": ["liveStream"]
+      }
+    },
+    "featuredCollections": {
+      "links": {
+        "self": "/v1/views/2a181af0-eea5-4a11-8c5a-3c2d146657d7/relationships/featuredCollections"
+      },
+      "data": [{
+        "id": "0aa512b2-f171-42ed-99e0-32cbd35d36b7",
+        "type": "collection"
+      }],
+      "meta": {
+        "entityTypes": ["collection"]
+      }
+    },
+    "featuredVideos": {
+      "links": {
+        "self": "/v1/views/2a181af0-eea5-4a11-8c5a-3c2d146657d7/relationships/videos"
+      },
+      "data": [{
+        "id": "a-video-with-feature-keys",
+        "type": "video"
+      }, {
+        "id": "a-video-without-feature-keys",
+        "type": "video"
+      }, {
+        "id": "ooyala-ARandomOddNetworksVideo",
+        "type": "video"
+      }],
+      "meta": {
+        "entityTypes": ["video"]
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "b3e5110b-a3fa-4188-b36a-8bec657c60f8",
+  "type": "collection",
+  "organization" : "odd-networks",
+  "title": "Series 1",
+  "description": "Series 1",
+  "images": {
+    "aspect16x9": "http://image.oddworks.io/eooyala/1sb3lyeDqceL2bg9n92QLrx70spWE_-E/promo271524327.jpg"
+  },
+  "releaseDate": "2015-12-02T13:33:21Z",
+  "relationships": {
+    "entities": {
+      "links": {
+        "self": "/v1/collections/b3e5110b-a3fa-4188-b36a-8bec657c60f8/entities"
+      },
+      "data": [
+        {
+          "id": "0aa512b2-f171-42ed-99e0-32cbd35d36b7",
+          "type": "collection"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "dd4280d7-b587-420c-8546-fd731d60a926",
+  "type": "liveStream",
+  "organization": "odd-networks",
+  "title": "Odd Networks Live Stream",
+  "description": "Odd Networks' 24/7 live stream of the most exciting poker events, tournaments and programming.",
+  "images": {
+    "aspect16x9": "http://image.oddworks.io/eooyala/5rdTZ2dTpHHlt7FUJBMvciizDVf1DU-T/promo260476836.jpg",
+    "aspect4x3": "http://dummyimage.com/4:3x1440&text=Live+Stream",
+    "aspect3x4": "http://dummyimage.com/3:4x1920&text=Live+Stream",
+    "aspect1x1": "http://dummyimage.com/1:1x1920&text=Live+Stream",
+    "aspect2x3": "http://dummyimage.com/2:3x1920&text=Live+Stream"
+  },
+  "streams": [{
+    "url": "http://example.com/manifest.f4m",
+    "videoHeight": 1080,
+    "isSource": "false",
+    "videoWidth": 1920,
+    "streamType": "abr",
+    "audioBitrate": 128,
+    "fileSize": 388307608,
+    "videoCodec": "h264",
+    "profile": "baseline",
+    "averageVideoBitrate": 4400,
+    "muxingFormat": "TS",
+    "audioCodec": "aac"
+  }, {
+    "url": "http://example.com/master.m3u8",
+    "videoHeight": 1080,
+    "isSource": "false",
+    "videoWidth": 1920,
+    "streamType": "abr",
+    "audioBitrate": 128,
+    "fileSize": 388307608,
+    "videoCodec": "h264",
+    "profile": "baseline",
+    "averageVideoBitrate": 4400,
+    "muxingFormat": "TS",
+    "audioCodec": "aac"
+  }, {
+    "url": "http://example.com/Manifest",
+    "videoHeight": 1080,
+    "isSource": "false",
+    "videoWidth": 1920,
+    "streamType": "abr",
+    "audioBitrate": 128,
+    "fileSize": 388307608,
+    "videoCodec": "h264",
+    "profile": "baseline",
+    "averageVideoBitrate": 4400,
+    "muxingFormat": "TS",
+    "audioCodec": "aac"
+  }],
+  "releaseDate": "2015-04-21T09:01:23.000Z"
+}
