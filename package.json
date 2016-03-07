@@ -1,5 +1,5 @@
 {
-  "name": "seneca-odd-catalog",
+  "name": "@oddnetworks/seneca-odd-catalog",
   "version": "3.0.0",
   "description": "",
   "main": "odd-catalog.js",
