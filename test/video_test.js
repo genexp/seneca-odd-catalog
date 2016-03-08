@@ -259,6 +259,45 @@ test('Fetching a video that does not exist returns null even when feature tags e
 	});
 });
 
+test('Fetching a video with a device without features', function (t) {
+	t.plan(6);
+
+	var organization = {
+		id: 'odd-networks',
+		features: {
+			overlays: {
+				enabled: true,
+				url: 'http://example.com/image.png'
+			},
+			ads: {
+				enabled: true,
+				provider: 'prisonsquare',
+				format: 'vast'
+			},
+			player: {
+				enabled: true,
+				type: 'ooyala',
+				pCode: 'pee-code',
+				domain: 'ooyala.com'
+			}
+		}
+	};
+
+	var device = {
+		id: 'device-id'
+	};
+
+	pin.fetchVideo({id: 'a-video-without-feature-keys', organization: organization, device: device}, function (err, result) {
+		t.equal(result.ads.enabled, true);
+		t.equal(result.ads.assetId, 'a-video-without-feature-keys');
+		t.equal(result.ads.format, 'vast');
+		t.equal(result.ads.provider, 'prisonsquare');
+		t.equal(result.player.enabled, true);
+		t.equal(result.player.type, 'ooyala');
+		t.end(err);
+	});
+});
+
 test('User entitlements get computed', function (t) {
 	t.plan(1);
 
