@@ -8,7 +8,7 @@ var v4 = uuid.v4;
 var _baseVideo = require('./structures/video.json');
 var _baseCollection = require('./structures/collection.json');
 var seneca = require('../seneca_helper');
-var schemas = require('odd-schemas');
+var schemas = require('@oddnetworks/odd-schemas');
 var dg = schemas.newDataGenerator(schemas.loadSchemas());
 
 function _createEntity(obj, opts) {

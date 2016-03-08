@@ -36,7 +36,7 @@
     "inflection": "^1.7.1",
     "interpolate": "^0.1.0",
     "lodash": "^4.2.1",
-    "@oddnetworks/odd-schemas": "git+https://git@github.com/oddnetworks/odd-schemas.git",
+    "@oddnetworks/odd-schemas": "git+https://github.com/oddnetworks/odd-schemas.git",
     "parambulator": "^1.5.0",
     "seneca": "^0.6.3",
     "uuid": "^2.0.1"
