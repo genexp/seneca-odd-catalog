@@ -45,6 +45,10 @@ module.exports = function (plugin, options, seneca) {
 		// item, within each relationship.
 		relatedEntities = _(entities).map('relationships')
 			.map(!args.include || args.include === true ? _.values : function (value) {
+				if (!value) {
+					return undefined;
+				}
+
 				var ret = [];
 
 				_.each(args.include.split(','), function eachIncludedScope(scope) {
@@ -58,6 +62,7 @@ module.exports = function (plugin, options, seneca) {
 			.flattenDeep()
 			.map('data')
 			.flattenDeep()
+			.remove(undefined)
 			.value()
 		;
 
