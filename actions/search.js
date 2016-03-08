@@ -16,7 +16,7 @@ module.exports = function (plugin, options, seneca, elasticClient) {
 		var term = args.term;
 		var limit = args.limit || 10;
 		var offset = args.offset || 0;
-		var entityTypes = args.entityTypes || ['video', 'videoCollection', 'collection'];
+		var entityTypes = args.entityTypes || ['video', 'collection'];
 
 		// Build Query
 		var query = ejs

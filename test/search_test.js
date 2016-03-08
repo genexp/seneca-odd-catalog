@@ -26,7 +26,7 @@ test('A search can search without decorating entities', function (t) {
 		t.equal(out.meta.term, 'Odd', 'shows the term');
 		t.equal(out.meta.limit, 10, 'shows the limit');
 		t.equal(out.meta.offset, 0, 'shows the offset');
-		t.equal(out.meta.entityTypes.join(','), 'video,videoCollection,collection', 'shows the entity types');
+		t.equal(out.meta.entityTypes.join(','), 'video,collection', 'shows the entity types');
 		t.notOk(out.data[0].ads);
 		t.notOk(out.data[0].player);
 		t.end(err);
@@ -62,7 +62,7 @@ test('A search can filter by orgnization and device', function (t) {
 		t.equal(out.meta.term, 'odd', 'shows the term');
 		t.equal(out.meta.limit, 10, 'shows the limit');
 		t.equal(out.meta.offset, 0, 'shows the offset');
-		t.equal(out.meta.entityTypes.join(','), 'video,videoCollection,collection', 'shows the entity types');
+		t.equal(out.meta.entityTypes.join(','), 'video,collection', 'shows the entity types');
 		t.equal(out.data[0].ads.format, 'vast');
 		t.equal(out.data[0].ads.assetId, 'a-video-without-feature-keys');
 		t.equal(out.data[0].player.type, 'external');
@@ -81,7 +81,7 @@ test('A search can be executed with only only specifying a term of garbage', fun
 		t.equal(out.meta.term, '"TOTALGARBAGEKJSDFKJH"', 'shows the term');
 		t.equal(out.meta.limit, 10, 'shows the limit');
 		t.equal(out.meta.offset, 0, 'shows the offset');
-		t.equal(out.meta.entityTypes.join(','), 'video,videoCollection,collection', 'shows the entity types');
+		t.equal(out.meta.entityTypes.join(','), 'video,collection', 'shows the entity types');
 		t.end(err);
 	});
 });
@@ -126,7 +126,7 @@ test('Without quotes does an and query', function (t) {
 		t.equal(out.meta.term, 'Odd Networks', 'shows the term');
 		t.equal(out.meta.limit, 10, 'shows the limit');
 		t.equal(out.meta.offset, 0, 'shows the offset');
-		t.equal(out.meta.entityTypes.join(','), 'video,videoCollection,collection', 'shows the entity types');
+		t.equal(out.meta.entityTypes.join(','), 'video,collection', 'shows the entity types');
 		t.end(err);
 	});
 });
@@ -141,7 +141,7 @@ test('Does the same search regardless of quotes', function (t) {
 		t.equal(out.meta.term, '"Odd Networks"', 'shows the term');
 		t.equal(out.meta.limit, 10, 'shows the limit');
 		t.equal(out.meta.offset, 0, 'shows the offset');
-		t.equal(out.meta.entityTypes.join(','), 'video,videoCollection,collection', 'shows the entity types');
+		t.equal(out.meta.entityTypes.join(','), 'video,collection', 'shows the entity types');
 		t.end(err);
 	});
 });
@@ -156,7 +156,7 @@ test('A search can be executed with weird characters', function (t) {
 		t.equal(out.meta.term, '\:\:\:', 'shows the term');
 		t.equal(out.meta.limit, 10, 'shows the limit');
 		t.equal(out.meta.offset, 0, 'shows the offset');
-		t.equal(out.meta.entityTypes.join(','), 'video,videoCollection,collection', 'shows the entity types');
+		t.equal(out.meta.entityTypes.join(','), 'video,collection', 'shows the entity types');
 		t.end(err);
 	});
 });
