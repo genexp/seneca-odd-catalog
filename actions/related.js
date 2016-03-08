@@ -35,7 +35,7 @@ module.exports = function (plugin, options, seneca) {
 		entities = _.compact(entities);
 
 		// If depth is not a valid integer, return
-		if (!_.isNumber(args.depth) || args.depth <= 0) {
+		if ((!_.isNumber(args.depth) || args.depth <= 0) && !_.isString(args.include)) {
 			return done(null, null);
 		}
 		depth = args.depth || 1;
@@ -43,12 +43,24 @@ module.exports = function (plugin, options, seneca) {
 
 		// This ball of crazy pulls all of the data properties from each
 		// item, within each relationship.
-		relatedEntities = _(entities).map('relationships');
-		relatedEntities = relatedEntities.map(_.values);
-		relatedEntities = relatedEntities.flattenDeep();
-		relatedEntities = relatedEntities.map('data');
-		relatedEntities = relatedEntities.flattenDeep();
-		relatedEntities = relatedEntities.value();
+		relatedEntities = _(entities).map('relationships')
+			.map(!args.include || args.include === true ? _.values : function (value) {
+				var ret = [];
+
+				_.each(args.include.split(','), function eachIncludedScope(scope) {
+					if (value[scope]) {
+						ret[scope] = value[scope];
+					}
+				});
+
+				return _.values(ret);
+			})
+			.flattenDeep()
+			.map('data')
+			.flattenDeep()
+			.value()
+		;
+
 		if (!_.isArray(relatedEntities)) {
 			return done(null, null);
 		}
