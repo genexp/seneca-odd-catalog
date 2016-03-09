@@ -60,7 +60,7 @@ module.exports = function (plugin, options, seneca) {
 			cmd = 'fetch_' + inflection.underscore(entity.type);
 			cmd = inflection.camelize(cmd, true);
 			cmd = inflection.singularize(cmd);
-			return act(_.assign({role: 'catalog', cmd: cmd, id: entity.id}, extendedArgs));
+			return act(_.assign({role: 'catalog', cmd: commandGuard(cmd), id: entity.id}, extendedArgs));
 		})).then(function (entities) {
 			var e;
 			entities = _.compact(entities);
@@ -81,3 +81,7 @@ module.exports = function (plugin, options, seneca) {
 
 	seneca.add({role: plugin, cmd: 'related'}, related);
 };
+
+function commandGuard(cmd) {
+	return cmd === 'fetchVideoCollection' ? 'fetchCollection' : cmd;
+}
