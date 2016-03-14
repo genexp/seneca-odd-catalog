@@ -32,6 +32,7 @@ module.exports = function (plugin, options, seneca) {
 		return Promise.all(promises)
 			.then(function addRelatedVideos(videos) {
 				var promises = [];
+				videos = _.compact(videos);
 
 				for (var x = 0; x < videos.length; x++) {
 					var video = videos[x];
