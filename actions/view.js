@@ -45,7 +45,7 @@ module.exports = function (plugin, options, seneca) {
 						.then(function (related) {
 							// Attach the included entities to the view and cache it without decorated user entitlements
 							view.included$ = related;
-							cache.get(args.id, view);
+							cache.set(args.id, view);
 
 							// If fetchView was supplied a user then decoracte the includes with entitlements
 							if (args.user) {

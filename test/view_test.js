@@ -21,7 +21,7 @@ seneca.ready(function () {
 
 		pin.fetchView({id: '2a181af0-eea5-4a11-8c5a-3c2d146657d7'}, function (err, out) {
 			t.equal(out.id, '2a181af0-eea5-4a11-8c5a-3c2d146657d7');
-			t.equal(out.included$.length, 5);
+			t.equal(out.included$.length, 6);
 			t.equal(out.included$[0].meta.entitled, true);
 			t.end(err);
 		});
@@ -36,7 +36,7 @@ seneca.ready(function () {
 
 		pin.fetchView({id: '2a181af0-eea5-4a11-8c5a-3c2d146657d7', user: user}, function (err, out) {
 			t.equal(out.id, '2a181af0-eea5-4a11-8c5a-3c2d146657d7');
-			t.equal(out.included$.length, 5);
+			t.equal(out.included$.length, 6);
 
 			var video = _.find(out.included$, {id: 'a-video-without-feature-keys'});
 			t.equal(video.meta.entitled, false);
