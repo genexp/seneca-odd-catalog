@@ -9,8 +9,8 @@ var deleteByQuery = require('elasticsearch-deletebyquery');
 module.exports = function (options) {
 	var seneca = this;
 	var plugin = 'catalog';
-	var genericEntities = ['promotion', 'query', 'view', 'article', 'event', 'external'];
-	var specialEntities = ['live-stream', 'video', 'collection'];
+	var genericEntities = ['promotion', 'query', 'article', 'event', 'external'];
+	var specialEntities = ['live-stream', 'video', 'collection', 'view'];
 	var senecaEntityMap;
 
 	// ElasticSearch Entities

@@ -13,5 +13,8 @@
 	},
 	"url": "http://example.com/video.m3u8",
 	"duration": 300,
-	"releaseDate": "2015-04-21T09:01:23.000Z"
+	"releaseDate": "2015-04-21T09:01:23.000Z",
+	"meta": {
+		"entitlements": ["bald", "bearded", "beautiful"]
+	}
 }
