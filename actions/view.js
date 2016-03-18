@@ -27,7 +27,7 @@ module.exports = function (plugin, options, seneca) {
 		if (view) {
 			// If fetchView was supplied a user then decoracte the includes with entitlements
 			if (args.user) {
-				view.included$ = _.map(view.included$, function (entity) {
+				view._included = _.map(view._included, function (entity) {
 					return userEntitlements(entity, args.user);
 				});
 			}
@@ -44,12 +44,12 @@ module.exports = function (plugin, options, seneca) {
 					act({role: 'catalog', cmd: 'related', entity: view, depth: args.depth || 1})
 						.then(function (related) {
 							// Attach the included entities to the view and cache it without decorated user entitlements
-							view.included$ = related;
+							view._included = related;
 							cache.set(args.id, view);
 
 							// If fetchView was supplied a user then decoracte the includes with entitlements
 							if (args.user) {
-								view.included$ = _.map(view.included$, function (entity) {
+								view._included = _.map(view._included, function (entity) {
 									return userEntitlements(entity, args.user);
 								});
 							}
