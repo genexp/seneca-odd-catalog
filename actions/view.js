@@ -22,12 +22,15 @@ module.exports = function (plugin, options, seneca) {
 	seneca.add({role: plugin, cmd: 'deleteView'}, store.deleteEntity);
 
 	function fetchView(args, done) {
+		var depth = args.depth || 1;
+		var key = [args.id, depth].join(':');
+
 		// Pull the view from cache
-		var view = cache.get(args.id);
+		var view = cache.get(key);
 		if (view) {
 			// If fetchView was supplied a user then decoracte the includes with entitlements
 			if (args.user) {
-				view._included = _.map(view._included, function (entity) {
+				view.included = _.map(view.included, function (entity) {
 					return userEntitlements(entity, args.user);
 				});
 			}
@@ -36,20 +39,20 @@ module.exports = function (plugin, options, seneca) {
 			// If the view was not in the cache, load it from the db
 			entity.load$(args.id, function (err, view) {
 				if (err) {
-					return done(null);
+					return done(err);
 				}
 
 				if (view) {
 					// Always fetch related for views with at least depth 1
-					act({role: 'catalog', cmd: 'related', entity: view, depth: args.depth || 1})
+					act({role: 'catalog', cmd: 'related', entity: view, depth: depth})
 						.then(function (related) {
 							// Attach the included entities to the view and cache it without decorated user entitlements
-							view._included = related;
-							cache.set(args.id, view);
+							view.included = related;
+							cache.set(key, view);
 
 							// If fetchView was supplied a user then decoracte the includes with entitlements
 							if (args.user) {
-								view._included = _.map(view._included, function (entity) {
+								view.included = _.map(view.included, function (entity) {
 									return userEntitlements(entity, args.user);
 								});
 							}
