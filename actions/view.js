@@ -28,6 +28,8 @@ module.exports = function (plugin, options, seneca) {
 		// Pull the view from cache
 		var view = cache.get(key);
 		if (view) {
+			seneca.log.info('view:cache', 'hit', key);
+
 			// If fetchView was supplied a user then decoracte the includes with entitlements
 			if (args.user) {
 				view.included = _.map(view.included, function (entity) {
@@ -43,12 +45,15 @@ module.exports = function (plugin, options, seneca) {
 				}
 
 				if (view) {
+					seneca.log.info('view:cache', 'miss', key);
+
 					// Always fetch related for views with at least depth 1
 					act({role: 'catalog', cmd: 'related', entity: view, depth: depth})
 						.then(function (related) {
 							// Attach the included entities to the view and cache it without decorated user entitlements
 							view.included = related;
 							cache.set(key, view);
+							seneca.log.info('view:cache', 'set', key);
 
 							// If fetchView was supplied a user then decoracte the includes with entitlements
 							if (args.user) {
